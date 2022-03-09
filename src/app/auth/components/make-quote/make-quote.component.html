@@ -1,0 +1,175 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3 mt-4">
+
+    <h3>Create Quote</h3>
+
+    <form #createQuoteForm="ngForm">
+      <div class="form-group">
+
+
+        <div class="row">
+          <h6>Customer Details</h6>
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <label for="cust_firstName" class="">First Name</label>
+              <input type="text" id="cust_firstName" name="cust_firstName" class="form-control" #cust_firstName="ngModel" ngModel required maxlength="50"
+                     [(ngModel)]="formData.cust_firstName" [ngModelOptions]="{standalone:true}" />
+              <span *ngIf="cust_firstName.touched && !cust_firstName.valid" class="errormessage">First Name is required.</span>
+              <span *ngIf="cust_firstName.errors && cust_firstName.errors['maxlength']">First Name is maximum 20 character.</span>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <label for="cust_lastName" class="">Last Name</label>
+              <input type="text" id="cust_lastName" name="cust_lastName" class="form-control" #cust_lastName="ngModel" ngModel required maxlength="50"
+                     [(ngModel)]="formData.cust_lastName" [ngModelOptions]="{standalone:true}" />
+              <span *ngIf="cust_lastName.touched && !cust_lastName.valid" class="errormessage">Last Name is required.</span>
+              <span *ngIf="cust_lastName.errors && cust_lastName.errors['maxlength']">Last Name is maximum 20 character.</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <label for="cust_occupation" class="">Occupation</label>
+              <input type="text" id="cust_occupation" name="cust_occupation" class="form-control" #cust_occupation="ngModel" ngModel maxlength="50"
+                     [(ngModel)]="formData.cust_occupation" [ngModelOptions]="{standalone:true}" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <label for="cust_address" class="">Address</label>
+              <input type="text" id="lastName" name="cust-address" class="form-control" #cust_address="ngModel" ngModel required maxlength="50"
+                     [(ngModel)]="formData.cust_address" [ngModelOptions]="{standalone:true}" />
+              <span *ngIf="cust_address.touched && !cust_address.valid" class="errormessage">Address is required.</span>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <label for="cust_phone" class="">Phone</label>
+              <input type="text" id="cust_phone" name="cust_phone" class="form-control" #cust_phone="ngModel" ngModel required maxlength="50"
+                     [(ngModel)]="formData.cust_phone" [ngModelOptions]="{standalone:true}" />
+              <span *ngIf="cust_phone.touched && !cust_phone.valid" class="errormessage">Phone is required.</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <label for="cust_email" class="">Email Address</label>
+              <input type="text" id="cust_email" name="cust_email" class="form-control" #cust_email="ngModel" ngModel required maxlength="50"
+                     [(ngModel)]="formData.cust_email" [ngModelOptions]="{standalone:true}" />
+              <span *ngIf="cust_email.touched && !cust_email.valid" class="errormessage">Email is required.</span>
+            </div>
+          </div>
+
+        </div>
+        <br>
+
+        <div class="row">
+          <h6>Vehicle Details</h6>
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <label for="vehicleRegistration" class="">Registration Number</label>
+              <input type="text" id="vehicleRegistration" name="vehicleRegistration" class="form-control" #vehicleRegistration="ngModel" ngModel required maxlength="50"
+                     [(ngModel)]="formData.vehicleRegistration" [ngModelOptions]="{standalone:true}" />
+              <span *ngIf="vehicleRegistration.touched && !vehicleRegistration.valid" class="errormessage"> Vehicle Registration Number is required.</span>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <label for="carMake" class="">Manufacturer</label>
+              <input type="text" id="carmake" name="carMake" class="form-control" #carMake="ngModel" ngModel required maxlength="50"
+                     [(ngModel)]="formData.carMake" [ngModelOptions]="{standalone:true}" />
+              <span *ngIf="carMake.touched && !carMake.valid" class="errormessage">Manufacturer Name is required.</span>
+
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <label for="carModel" class="">Model</label>
+              <input type="text" id="firstName" name="carModel" class="form-control" #carModel="ngModel" ngModel required maxlength="50"
+                     [(ngModel)]="formData.carModel" [ngModelOptions]="{standalone:true}" />
+              <span *ngIf="carModel.touched && !carModel.valid" class="errormessage">Model Name is required.</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <label for="transmission" class="">Transmission Type</label>
+              <input type="text" id="transmission" name="transmission" class="form-control" #transmission="ngModel" ngModel required maxlength="50"
+                     [(ngModel)]="formData.transmission" [ngModelOptions]="{standalone:true}" />
+              <span *ngIf="transmission.touched && !transmission.valid" class="errormessage">Transmission Type is required.</span>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <label for="carValue" class="">Value</label>
+              <input type="text" id="carValue" name="carValue" class="form-control" #carValue="ngModel" ngModel required maxlength="50"
+                     [(ngModel)]="formData.carValue" [ngModelOptions]="{standalone:true}" />
+              <span *ngIf="carValue.touched && !carValue.valid" class="errormessage">Value is required.</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <label for="carColour" class="">Colour</label>
+              <input type="text" id="carColour" name="carColour" class="form-control" #carColour="ngModel" ngModel maxlength="50"
+                     [(ngModel)]="formData.carColour" [ngModelOptions]="{standalone:true}" />
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+          <h6>Insurance Details</h6>
+
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <label for="insuranceOption" class="">Insurance Options Available</label> <br>
+              <select [(ngModel)]="formData.insuranceOption" #insuranceOption="ngModel" ngModel [ngModelOptions]="{standalone:true}">
+                <option value="null">None </option>
+                <option>Insurance Option 1</option>
+                <option>Insurance Option 2</option>
+                <option>Insurance Option 3</option>
+              </select>
+              <span *ngIf="insuranceOption.touched && !insuranceOption.valid" class="errormessage">Insurance Option is required.</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="md-form mb-0">
+              <label for="regionName" class="">Select Region</label> <br>
+              <select [(ngModel)]="formData.regionName" #regionName="ngModel" ngModel [ngModelOptions]="{standalone:true}">
+                <option value="null">None </option>
+                <option>ACT</option>
+                <option>VIC</option>
+                <option>QLD</option>
+                <option>WA</option>
+              </select>
+              <span *ngIf="regionName.touched && !regionName.valid" class="errormessage">Region is required.</span>
+            </div>
+          </div>
+        </div>
+        <br>
+
+      </div>
+      <div class="row" id="btn-div">
+
+        <button type="submit" class="btn btn-primary" id="submitbtn" [disabled]="createQuoteForm.invalid" (click)="back()">Submit</button>&nbsp;
+  
+
+      </div>
+      <!--(click)="Submit()"
+  
+        -->
+
+    </form>
+  </div>
+</div>
+<br>

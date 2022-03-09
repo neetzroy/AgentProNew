@@ -1,0 +1,43 @@
+
+
+
+
+<div class="row">
+  <div class="col-md-6 offset-md-3 mt-4">
+
+    <h3>Login</h3>
+
+    <form #loginForm="ngForm">
+      <div class="form-group">
+
+
+        <div class="mb-3">
+          <label for="loginemail" class="form-label">User Email</label>
+          <input type="email" class="form-control" id="loginUseremail" placeholder="Enter your business email id"
+                 #email="ngModel" ngModel pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required
+                 [(ngModel)]="formData.email" [ngModelOptions]="{standalone:true}" />
+          <span *ngIf="email.invalid && (email.dirty || email.touched)" class="errormessage">Please enter valid email.</span>
+        </div>
+        <div class="mb-3">
+          <label for="loginPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" name="loginPassword" id="loginPassword"
+                 placeholder="Enter Password" ngModel required
+                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}"
+                 #password="ngModel" [(ngModel)]="formData.password" [ngModelOptions]="{standalone:true}">
+          <span *ngIf="password.invalid && (password.dirty || password.touched)" class="errormessage">Please enter correct password.</span>
+        </div>
+      </div>
+      <div class="mb-3 ">
+        <a class="reset-pwd" routerLink='/reset-password'>Forgot Password?Click Here</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="allbuttons" [disabled]="loginForm.invalid" routerLink='/agentpros-main' routerLinkActive="active" (click)="login()">Login</button>
+
+    </form>
+  </div>
+</div>
+<br>
+
+
+
+
